@@ -1,31 +1,20 @@
-// Make sure service workers are supported
-if ('serviceWorker' in navigator) {
-    console.log("Service Worker supported");
-    window.addEventListener('load', () => {
-        navigator.serviceWorker
-            .register("../service-worker.js", { scope: "/" })
-            .then(reg => console.log("Service Worker registered successfully."))
-            .catch(error => console.log("Service Worker registration failed:", error));
-    })
-}
-
 let transactions = [];
 let myChart;
 
-// fetch("/api/transaction")
-//     .then(response => {
-//         return response.json();
-//     })
-//     .then(data => {
-//         console.log(data);
+fetch("/api/transaction")
+    .then(response => {
+        return response.json();
+    })
+    .then(data => {
+        console.log(data);
 
-//         // save db data on global variable
-//         transactions = data;
+        // save db data on global variable
+        transactions = data;
 
-//         populateTotal();
-//         populateTable();
-//         populateChart();
-//     });
+        populateTotal();
+        populateTable();
+        populateChart();
+    });
 
 function populateTotal() {
     // reduce transaction amounts to a single total value
