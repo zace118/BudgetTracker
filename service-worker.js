@@ -1,12 +1,11 @@
 const FILES_TO_CACHE = [
     "/",
-    "/index.html",
-    "/style.css",
-    "/index.js",
-    "/icons/icon-192x192.png",
-    "/icons/icon-512x512.png"
+    "public/index.html",
+    "public/style.css",
+    "public/index.js",
+    "public/icons/icon-192x192.png",
+    "public/icons/icon-512x512.png"
 ];
-
 
 const PRECACHE = "precache-v1";
 const RUNTIME = "runtime";
